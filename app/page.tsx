@@ -5,7 +5,7 @@ import { open as openEmbed } from "@play-ai/web-embed";
 import Image from "next/image";
 
 // Replace with your web embed ID
-const webEmbedId = "0owoareodDmFq0O9coP81";
+const webEmbedId = "vQMrDeBW5_0ORERjMBylp";
 
 /*
  * [Agent Greeting]
