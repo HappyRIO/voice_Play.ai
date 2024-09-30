@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-screen bg-gray-300">
+      <div className="h-screen bg-gray-300 z-50">
         <div className="flex items-center bg-[#000016] pt-5 pl-2">
           <Image className="h-14" src={"/image/pharmacy.webp"} alt="" width={500} height={50}/>
           <div className="text-white text-5xl pl-40 text-nowrap">24 Hours Smart Pharmacist</div>
