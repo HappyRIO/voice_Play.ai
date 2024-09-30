@@ -5,7 +5,7 @@ import { open as openEmbed } from "@play-ai/web-embed";
 import Image from "next/image";
 
 // Replace with your web embed ID
-const webEmbedId = "vQMrDeBW5_0ORERjMBylp";
+const webEmbedId = "Pharmacist-0owoareodDmFq0O9coP81";
 
 /*
  * [Agent Greeting]
@@ -18,7 +18,7 @@ const webEmbedId = "vQMrDeBW5_0ORERjMBylp";
  */
 
 export default function Home() {
-  const [text, setText] = useState("Text************");
+  const [text, setText] = useState("");
 
   // Define your events here
   const events = [
