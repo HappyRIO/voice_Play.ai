@@ -5,7 +5,7 @@ import { open as openEmbed } from "@play-ai/web-embed";
 import Image from "next/image";
 
 // Replace with your web embed ID
-const webEmbedId = "vQMrDeBW5_0ORERjMBylp";
+const webEmbedId = "ML4V4KHHvKYxv7-9fN_ct";
 
 /*
  * [Agent Greeting]
@@ -41,14 +41,53 @@ export default function Home() {
 
   useEffect(() => {
     openEmbed(webEmbedId, { events, onEvent });
+    // const iframe = document.getElementById('play-ai-embed') as HTMLIFrameElement;
+    // console.log("--->", iframe);
+    // const element = iframe.contentDocument
+    // console.log("--->", element);
+    // if (element) console.log("element--->");
+    
+    
+
+    // Now you can manipulate the elements as needed
+   
+    // elements[0].style.display = "none"
+    // Call the function to remove links
+    // removeLinksFromIframe();
   }, []);
+
+  // const removeLinksFromIframe = () => {
+  //   const iframe = document.getElementById('play-ai-embed');
+  //   console.log(iframe)
+
+  //   if (iframe) {
+  //     const iframeDocument = iframe.contentDocument;
+  //     console.log("iframeDocument---->", iframeDocument)
+
+  //     // const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+  //     // const links = iframeDocument.getElementsByTagName('a');
+
+  //     // Convert HTMLCollection to an array and remove each link
+  //     // Array.from(links).forEach(link => {
+  //     //   link.parentNode.removeChild(link);
+  //     // });
+  //   }
+  // };
 
   return (
     <>
       <div className="h-screen bg-gray-300">
         <div className="flex items-center bg-[#000016] pt-5 pl-2">
-          <Image className="h-14" src={"/image/pharmacy.webp"} alt="" width={500} height={50}/>
-          <div className="text-white text-5xl pl-40 text-nowrap">24 Hours Smart Pharmacist</div>
+          <Image
+            className="h-14"
+            src={"/image/pharmacy.webp"}
+            alt=""
+            width={500}
+            height={50}
+          />
+          <div className="text-white text-5xl pl-40 text-nowrap">
+            24 Hours Smart Pharmacist
+          </div>
           <div className="flex justify-end items-center w-full pb-5">
             <Image
               className="pr-1"
@@ -59,7 +98,10 @@ export default function Home() {
             ></Image>
           </div>
         </div>
-        <div className="flex bg-[#ee1c2d] text-white text-xl w-full text-center justify-center"> Ken - Your online and 24 Hour AI Pharmacist</div>
+        <div className="flex bg-[#ee1c2d] text-white text-xl w-full text-center justify-center">
+          {" "}
+          Ken - Your online and 24 Hour AI Pharmacist
+        </div>
         <div className="h-[80vh]">
           <Image
             className="w-full h-full shadow-2xl"
