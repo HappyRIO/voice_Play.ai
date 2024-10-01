@@ -64,8 +64,7 @@ export default function Home() {
         console.log("Iframe element:", iframe);
 
         // Access the content of the iframe if it's from the same origin
-        const iframeDocument =
-          iframe.contentDocument || iframe.contentWindow?.document;
+        const iframeDocument = iframe.contentDocument
         console.log("iframeDocument:", iframeDocument);
 
         if (iframeDocument) {
