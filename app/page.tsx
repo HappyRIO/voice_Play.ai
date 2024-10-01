@@ -55,7 +55,7 @@ export default function Home() {
 
   useEffect(() => {
     // Access the iframe after it has loaded
-    setTimeout(() => {
+    // setTimeout(() => {
       const iframe = document.getElementById(
         "play-ai-embed"
       ) as HTMLIFrameElement;
@@ -85,7 +85,7 @@ export default function Home() {
       } else {
         console.error("Iframe not found");
       }
-    }, 5000);
+    // }, 5000);
   }, []);
 
   return (
