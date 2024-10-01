@@ -41,38 +41,52 @@ export default function Home() {
 
   useEffect(() => {
     openEmbed(webEmbedId, { events, onEvent });
-    // const iframe = document.getElementById('play-ai-embed') as HTMLIFrameElement;
-    // console.log("--->", iframe);
-    // const element = iframe.contentDocument
-    // console.log("--->", element);
-    // if (element) console.log("element--->");
-    
-    
+    // setTimeout(() => {
+    //   const iframe = document.getElementById(
+    //     "play-ai-embed"
+    //   ) as HTMLIFrameElement;
+    //   console.log("iframe--->", iframe);
+    //     const iframeDocument = iframe.contentDocument
+    //     console.log("iframeDocument--->", iframeDocument);
 
-    // Now you can manipulate the elements as needed
-   
-    // elements[0].style.display = "none"
-    // Call the function to remove links
-    // removeLinksFromIframe();
+    // }, 5000);
+    // console.log('====================================');
   }, []);
 
-  // const removeLinksFromIframe = () => {
-  //   const iframe = document.getElementById('play-ai-embed');
-  //   console.log(iframe)
+  useEffect(() => {
+    // Access the iframe after it has loaded
+    setTimeout(() => {
+      const iframe = document.getElementById(
+        "play-ai-embed"
+      ) as HTMLIFrameElement;
+      if (iframe) {
+        // Log the iframe element
+        console.log("Iframe element:", iframe);
 
-  //   if (iframe) {
-  //     const iframeDocument = iframe.contentDocument;
-  //     console.log("iframeDocument---->", iframeDocument)
+        // Access the content of the iframe if it's from the same origin
+        const iframeDocument =
+          iframe.contentDocument || iframe.contentWindow?.document;
+        console.log("iframeDocument:", iframeDocument);
 
-  //     // const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-  //     // const links = iframeDocument.getElementsByTagName('a');
-
-  //     // Convert HTMLCollection to an array and remove each link
-  //     // Array.from(links).forEach(link => {
-  //     //   link.parentNode.removeChild(link);
-  //     // });
-  //   }
-  // };
+        if (iframeDocument) {
+          console.log("Iframe document accessed successfully.");
+          // Example: Access an element inside the iframe
+          const innerElement =
+            iframeDocument.getElementsByTagName("a"); // Replace with the actual ID
+          if (innerElement) {
+            innerElement[0].style.display = "none"
+            console.log("Inner element:", innerElement);
+          } else {
+            console.error("Inner element not found");
+          }
+        } else {
+          console.error("Unable to access iframe document.");
+        }
+      } else {
+        console.error("Iframe not found");
+      }
+    }, 5000);
+  }, []);
 
   return (
     <>
